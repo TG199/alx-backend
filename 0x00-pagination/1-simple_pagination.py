@@ -40,12 +40,12 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-            """ Get page
-            """
-            assert type(page) is int
-            assert page > 0
-            assert type(page_size) is int
-            assert page_size is 0
+        """ Get page
+        """
+        assert type(page) is int
+        assert page > 0
+        assert type(page_size) is int
+        assert page_size is 0
 
-            correct_indexes = index_range(page, page_size)
-            return correct_indexes
+        correct_indexes = index_range(page, page_size)
+        return correct_indexes
