@@ -20,7 +20,7 @@ class LIFOCache(BaseCaching):
         Put cache on cache system
         """
         if key is None or item is None:
-            pass
+            return
         if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
             last_key = list(self.cache_data.keys())[-1]
             print(f"DISCARD: {last_key}")

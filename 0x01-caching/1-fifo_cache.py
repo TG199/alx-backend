@@ -20,7 +20,7 @@ class FIFOCache(BaseCaching):
         Put cache on cache system
         """
         if key is None or item is None:
-            pass
+            return
         if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
             first_key = next(iter(self.cache_data))
             print(f"DISCARD: {first_key}")
