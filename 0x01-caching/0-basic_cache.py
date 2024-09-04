@@ -50,9 +50,8 @@ class BasicCache(BaseCaching):
         """
         Put items on caching system
         """
-        if key is None or item is None:
-            pass
-        self.cache_data[key] = item
+        if key is not None and item is not None:
+            self.cache_data[key] = item
 
     def get(self, key):
         """
