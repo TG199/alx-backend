@@ -50,7 +50,7 @@ class BasicCache(BaseCaching):
         """
         Put items on caching system
         """
-        if key or item is None:
+        if key is None or item is None:
             pass
         self.cache_data[key] = item
 
