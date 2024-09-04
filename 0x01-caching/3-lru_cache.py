@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-""" Lifo Caching module that inherits from BaseCaching
+""" LRU Caching module that inherits from BaseCaching
 """
 from base_caching import BaseCaching
 
 
-class LIFOCache(BaseCaching):
+class LRUCache(BaseCaching):
     """
     LIFO cache class
     """
