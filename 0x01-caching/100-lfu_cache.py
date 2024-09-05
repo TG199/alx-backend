@@ -6,6 +6,9 @@ from collections import defaultdict
 
 
 class LFUCache(BaseCaching):
+    """
+    LFU Caching algorithm implementation
+    """
     def __init__(self):
         """Initialize the LFU cache
         """
