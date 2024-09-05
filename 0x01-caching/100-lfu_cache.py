@@ -7,14 +7,16 @@ from collections import defaultdict
 
 class LFUCache(BaseCaching):
     def __init__(self):
-        """Initialize the LFU cache"""
+        """Initialize the LFU cache
+        """
         super().__init__()
         self.frequency_map = defaultdict(list)
         self.key_freq = {}
         self.min_freq = 0
 
     def put(self, key, item):
-        """Add an item in the cache"""
+        """Add an item in the cache
+        """
         if key is None or item is None:
             return
         if key in self.cache_data:
@@ -29,14 +31,16 @@ class LFUCache(BaseCaching):
             self.min_freq = 1
 
     def get(self, key):
-        """Get an item by key"""
+        """Get an item by key
+        """
         if key is None or key not in self.cache_data:
             return None
         self._update_frequency(key)
         return self.cache_data[key]
 
     def _update_frequency(self, key):
-        """Update the frequency of an accessed key"""
+        """Update the frequency of an accessed key
+        """
         freq = self.key_freq[key]
         self.frequency_map[freq].remove(key)
         if not self.frequency_map[freq]:
@@ -49,7 +53,8 @@ class LFUCache(BaseCaching):
         self.frequency_map[new_freq].append(key)
 
     def _evict_lfu(self):
-        """Evict the least frequently used item (if tie, use LRU)"""
+        """Evict the least frequently used item (if tie, use LRU)
+        """
         lfu_keys = self.frequency_map[self.min_freq]
         evict_key = lfu_keys.pop(0)
 
