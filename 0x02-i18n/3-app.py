@@ -31,7 +31,7 @@ def index():
     """
     Home route
     """
-    return render_template('index.html')
+    return render_template('3-index.html')
 
 
 if __name__ == '__main__':
